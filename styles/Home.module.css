@@ -8,7 +8,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -51,7 +51,7 @@
 }
 
 .description {
-  margin: 4rem 0;
+
   line-height: 1.5;
   font-size: 1.5rem;
 }
@@ -138,3 +138,12 @@
   list-style: none;
     font-weight: bold;
 } 
+
+.myimg{
+  border-radius: 10px;
+}
+
+.imgrap{
+  padding: 10px;
+  margin-top: 15px;
+}

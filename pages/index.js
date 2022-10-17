@@ -11,27 +11,22 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/* Navber */}
-      <nav className={styles.mainnav}>
-        <ul>
-          <li>Home</li>
-          <li>Blog</li>
-          <li>About</li>
-          <li>Contact</li>
-        </ul>
-      </nav>
+      
 
       <main className={styles.main}>
         <h1 className={styles.title}>
           Hunting Coder
         </h1>
+        <div className={styles.imgrap}>
+    <Image className={styles.myimg} src="/home.jpg" alt="" srcSet="" width={237} height={158}/>
 
+        </div>
         <p className={styles.description}>
           A blog for hunting coders by a hunting coder
         </p>
 
         <div className="blogs">
-          <h2>Popular Blogs</h2>
+          <h2>Latest Blogs</h2>
           <div className="blogItem">
             <h3>How to learn javaScript in 2022?</h3>
             <p>JavaScript is the language used to design logic for the web</p>
@@ -41,24 +36,13 @@ export default function Home() {
             <p>JavaScript is the language used to design logic for the web</p>
           </div>
           <div className="blogItem">
-            <h1>How to learn javaScript in 2022?</h1>
+            <h3>How to learn javaScript in 2022?</h3>
             <p>JavaScript is the language used to design logic for the web</p>
           </div>
         </div>
       </main>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
+      
     </div>
   )
 }
