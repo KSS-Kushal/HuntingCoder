@@ -42,7 +42,7 @@
 .title {
   margin: 0;
   line-height: 1.15;
-  font-size: 4rem;
+  font-size: 3.5rem;
 }
 
 .title,
@@ -146,4 +146,11 @@
 .imgrap{
   padding: 10px;
   margin-top: 15px;
+}
+
+.blog{
+  width: 45vw;
+}
+.blogItem h3{
+  cursor: pointer;
 }

@@ -3,6 +3,8 @@ import * as fs from 'fs';
 
 export default async function handler(req, res) {
     let blogs = await fs.promises.readdir("./blogdata")
+    if(req.query.count){
+    blogs = blogs.slice(0,parseInt(req.query.count))}
     let myfiles = []
     for (let index = 0; index < blogs.length; index++) {
         const element = blogs[index];

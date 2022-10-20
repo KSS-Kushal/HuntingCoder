@@ -1,8 +1,11 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import { useState } from 'react'
 import styles from '../styles/Home.module.css'
+import Link from 'next/link'
 
-export default function Home() {
+export default function Home(props) {
+  const [blog,setBlog] = useState(props.allBlogs)
   return (
     <div className={styles.container}>
       <Head>
@@ -14,35 +17,36 @@ export default function Home() {
       
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Hunting Coder
-        </h1>
         <div className={styles.imgrap}>
     <Image className={styles.myimg} src="/home.jpg" alt="" srcSet="" width={237} height={158}/>
 
         </div>
+        <h1 className={styles.title}>
+          &lt;Hunting Coder/&gt;
+        </h1>
         <p className={styles.description}>
           A blog for hunting coders by a hunting coder
         </p>
 
-        <div className="blogs">
+        <div className={styles.blog}>
           <h2>Latest Blogs</h2>
-          <div className="blogItem">
-            <h3>How to learn javaScript in 2022?</h3>
-            <p>JavaScript is the language used to design logic for the web</p>
-          </div>
-          <div className="blogItem">
-            <h3>How to learn javaScript in 2022?</h3>
-            <p>JavaScript is the language used to design logic for the web</p>
-          </div>
-          <div className="blogItem">
-            <h3>How to learn javaScript in 2022?</h3>
-            <p>JavaScript is the language used to design logic for the web</p>
-          </div>
+          {blog.map((blogitem)=>{
+            return <div className={styles.blogItem} key={blogitem.slug}>
+            <Link href={`/blogpost/${blogitem.slug}`}><h3>{blogitem.title}</h3></Link>
+            <p>{blogitem.content.substr(0,145)}...</p>
+             </div>
+          })}
         </div>
       </main>
 
       
     </div>
   )
+}
+export async function getServerSideProps(context){
+  let data = await fetch("http://localhost:3000/api/blogs?count=3");
+  let allBlogs = await data.json();
+  return {
+    props: {allBlogs},
+  }
 }

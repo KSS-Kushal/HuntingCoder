@@ -1,0 +1,30 @@
+.main {
+    min-height: 100vh;
+    padding: 4rem 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .container {
+    padding: 0 22rem;
+  }
+
+  .mb3{
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .formlabel{
+    padding-bottom: 5px;
+  }
+
+  .btn{
+    background-color: blue;
+    border-radius: 3px;
+    cursor: pointer;
+    border: 1px solid skyblue;
+  }
