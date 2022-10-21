@@ -27,10 +27,8 @@ export default function Blog(props) {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
-
-
         <InfiniteScroll
-          dataLength={blog.length} //This is important field to render the next data
+          dataLength={blog.length}
           next={fetchData}
           hasMore={allcount!==blog.length}
           loader={<h4>Loading...</h4>}
@@ -38,8 +36,7 @@ export default function Blog(props) {
             <p style={{ textAlign: 'center' }}>
               <b>Yay! You have seen it all</b>
             </p>
-          }
-          
+          } 
         >
           {blog.map((blogitem) => {
             return <div className={styles.blogItem} key={blogitem.slug}>
@@ -48,20 +45,8 @@ export default function Blog(props) {
             </div>
           })}
         </InfiniteScroll>
-
-
-
-       
       </main>
     </div>
   )
 }
 
-// export async function getServerSideProps(context) {
-//   let data = await fetch("http://localhost:3000/api/blogs");
-  
-//   let allBlogs = await data.json();
-//   return {
-//     props: { allBlogs },
-//   }
-// }

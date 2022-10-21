@@ -1,9 +1,6 @@
 import React, { useState } from 'react'
 import styles from '../styles/Contact.module.css'
 
-
-
-
 export default function Contact() {
   const [name,setName] = useState()
   const [email,setEmail] = useState()
@@ -12,7 +9,7 @@ export default function Contact() {
 
   const handleSubmit= (e)=>{
     e.preventDefault();
-    console.log(name,phone,email,desc)
+    
     const data = {name,phone,email,desc};
     fetch('http://localhost:3000/api/contact',{
       method: 'POST',
@@ -22,7 +19,7 @@ export default function Contact() {
       body: JSON.stringify(data)
     }).then(response =>response.text())
     .then(data=>{
-      console.log("Success:",data)
+      
       alert("Thanks for contacting us");
       setName("")
       setEmail('')
@@ -30,7 +27,7 @@ export default function Contact() {
       setDesc('')
     })
     .catch((error)=>{
-      console.error("Error:",error);
+      
     });
   }
   const handleChange= (e)=>{
